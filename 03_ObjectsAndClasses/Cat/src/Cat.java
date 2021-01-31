@@ -1,8 +1,10 @@
+import javax.lang.model.element.VariableElement;
 
 public class Cat
 {
     private double originWeight;
     private double weight;
+    private double amountOfFood;
 
     private double minWeight;
     private double maxWeight;
@@ -51,5 +53,14 @@ public class Cat
         else {
             return "Playing";
         }
+    }
+    public void pee (Double amount)
+    {
+        weight = amount + weight;
+    }
+    public Double amountOfFood ()
+    {
+       amountOfFood = weight - originWeight;
+        return Math.ceil(amountOfFood);
     }
 }

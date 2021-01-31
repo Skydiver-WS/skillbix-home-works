@@ -11,9 +11,6 @@ public class Loader
 
         double ammountOfFood = 0;
 
-
-
-
         System.out.println("Vasya weight:" + "\t" + vasya.getWeight());
         vasya.feed(2.0);
         System.out.println("Vasya ate" + "\t" + vasya.getWeight());
@@ -37,14 +34,20 @@ public class Loader
            }
         }
 
-       while (true)
+       while (!timka.getStatus().equals("Dead"))
        {
            timka.meow();
-           if (timka.getStatus().equals("Dead"))
-           {
-               System.out.println("Timka status:" + "\t" + timka.getStatus());
-               break;
-           }
        }
+        System.out.println("Timka status:" + "\t" + timka.getStatus());
+
+        System.out.println(gylka.getWeight());
+       gylka.pee(500.0);
+       gylka.pee(150.0);
+        gylka.pee(300.0);
+       System.out.println(gylka.getWeight());
+       gylka.amountOfFood();
+        System.out.println(gylka.amountOfFood());
+
+
     }
 }
