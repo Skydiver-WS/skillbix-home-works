@@ -9,10 +9,8 @@ public class Loader
         Cat gylka = new Cat();
         Cat umka = new Cat();
 
+
         double ammountOfFood = 0;
-
-
-
 
         System.out.println("Vasya weight:" + "\t" + vasya.getWeight());
         vasya.feed(2.0);
@@ -37,14 +35,20 @@ public class Loader
            }
         }
 
-       while (true)
+       while (!timka.getStatus().equals("Dead"))
        {
            timka.meow();
-           if (timka.getStatus().equals("Dead"))
-           {
-               System.out.println("Timka status:" + "\t" + timka.getStatus());
-               break;
-           }
        }
+       System.out.println("Timka status: " + timka.getStatus());
+
+       System.out.println("Weight: " + gylka.getWeight());
+       gylka.feed(150.0);
+       gylka.feed(100.0);
+       gylka.drink(1052.2);
+       gylka.drink(1052.2);
+       System.out.println("Weight: " + gylka.getWeight());
+       System.out.println("Amount of food eaten: " + gylka.amountOfFoodEaten());
+       gylka.pee();
+
     }
 }

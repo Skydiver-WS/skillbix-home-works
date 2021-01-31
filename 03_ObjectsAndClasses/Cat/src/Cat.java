@@ -1,8 +1,10 @@
-
 public class Cat
 {
     private double originWeight;
     private double weight;
+    private double foodEaten;
+    private double amountWater;
+//    private static double count;
 
     private double minWeight;
     private double maxWeight;
@@ -25,6 +27,7 @@ public class Cat
     public void feed(Double amount)
     {
         weight = weight + amount;
+        foodEaten = weight - originWeight;
     }
 
     public void drink(Double amount)
@@ -52,4 +55,19 @@ public class Cat
             return "Playing";
         }
     }
+
+    public Double amountOfFoodEaten ()
+    {
+        return Math.ceil(foodEaten);
+    }
+    public void pee ()
+    {
+        Double catWeightAfterToilet = getWeight() - (Math.pow(Math.random(),5));
+            System.out.println("Cat pee " + (getWeight() - catWeightAfterToilet));
+    }
+    /*public static void testCound ()
+    {
+       count++;
+       System.out.println("Test count" + count);
+    }*/
 }
