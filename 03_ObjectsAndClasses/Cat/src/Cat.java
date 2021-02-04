@@ -63,7 +63,7 @@ public class Cat
     public void pee ()
     {
         Double catWeightAfterToilet = getWeight() - (Math.pow(Math.random(),5));
-            System.out.println("Cat pee " + (getWeight() - catWeightAfterToilet));
+        System.out.println("Cat pee " + (getWeight() - catWeightAfterToilet));
     }
     /*public static void testCound ()
     {

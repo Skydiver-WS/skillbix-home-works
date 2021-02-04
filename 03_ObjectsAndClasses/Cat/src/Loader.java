@@ -49,6 +49,5 @@ public class Loader
        System.out.println("Weight: " + gylka.getWeight());
        System.out.println("Amount of food eaten: " + gylka.amountOfFoodEaten());
        gylka.pee();
-
     }
 }
