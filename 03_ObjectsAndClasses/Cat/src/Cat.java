@@ -3,8 +3,8 @@ public class Cat
     private double originWeight;
     private double weight;
     private double foodEaten;
-    private double amountWater;
-//    private static double count;
+//    private static int count;
+
 
     private double minWeight;
     private double maxWeight;
@@ -15,7 +15,7 @@ public class Cat
         originWeight = weight;
         minWeight = 1000.0;
         maxWeight = 9000.0;
-
+//        this.count++;
     }
 
     public void meow()
@@ -26,8 +26,9 @@ public class Cat
 
     public void feed(Double amount)
     {
-        weight = weight + amount;
-        foodEaten = weight - originWeight;
+       weight = weight + amount;
+       foodEaten += amount; //сокращенная форма записи foodEaten = foodEaten + amount. По умолчанию foodEaten = 0,
+
     }
 
     public void drink(Double amount)
@@ -55,19 +56,31 @@ public class Cat
             return "Playing";
         }
     }
-
     public Double amountOfFoodEaten ()
     {
         return Math.ceil(foodEaten);
     }
     public void pee ()
     {
-        Double catWeightAfterToilet = getWeight() - (Math.pow(Math.random(),5));
+        Double catWeightAfterToilet = getWeight() - (Math.pow(Math.random(),0.4));
         System.out.println("Cat pee " + (getWeight() - catWeightAfterToilet));
+        weight = catWeightAfterToilet;
     }
-    /*public static void testCound ()
-    {
-       count++;
-       System.out.println("Test count" + count);
-    }*/
+//    public static int getCount()
+//    {
+//       return count;
+//    }
+//    public void catCount ()
+//    {
+//      if (!getStatus().equals("Dead"))
+//      {
+//          count--;
+//
+//      }
+//      if (!getStatus().equals("Dead"))
+//      {
+//          count--;
+//
+//      }
+//    }
 }
