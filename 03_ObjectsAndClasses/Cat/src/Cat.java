@@ -1,3 +1,4 @@
+import javax.lang.model.element.VariableElement;
 public class Cat
 {
     private double originWeight;
@@ -5,6 +6,7 @@ public class Cat
     private double foodEaten;
     private double amountWater;
 //    private static double count;
+
 
     private double minWeight;
     private double maxWeight;
@@ -55,6 +57,7 @@ public class Cat
             return "Playing";
         }
     }
+
 
     public Double amountOfFoodEaten ()
     {

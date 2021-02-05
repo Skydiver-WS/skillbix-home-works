@@ -8,10 +8,7 @@ public class Loader
         Cat timka = new Cat();
         Cat gylka = new Cat();
         Cat umka = new Cat();
-
-
         double ammountOfFood = 0;
-
         System.out.println("Vasya weight:" + "\t" + vasya.getWeight());
         vasya.feed(2.0);
         System.out.println("Vasya ate" + "\t" + vasya.getWeight());
