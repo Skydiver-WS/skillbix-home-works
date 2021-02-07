@@ -1,7 +1,9 @@
+import javax.lang.model.element.VariableElement;
 public class Cat
 {
     private double originWeight;
     private double weight;
+    private double amountOfFood;
     private double foodEaten;
 //    private static int count;
 
@@ -28,7 +30,6 @@ public class Cat
     {
        weight = weight + amount;
        foodEaten += amount; //сокращенная форма записи foodEaten = foodEaten + amount. По умолчанию foodEaten = 0,
-
     }
 
     public void drink(Double amount)
