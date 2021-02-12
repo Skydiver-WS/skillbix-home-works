@@ -1,40 +1,51 @@
-import javax.lang.model.element.VariableElement;
 public class Cat
 {
     private double originWeight;
     private double weight;
-    private double amountOfFood;
     private double foodEaten;
-//    private static int count;
-
+    private static int count;
 
     private double minWeight;
     private double maxWeight;
 
+    boolean catAlive = getStatus().equals("Sleeping") || getStatus().equals("Playing");
     public Cat()
     {
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
         minWeight = 1000.0;
         maxWeight = 9000.0;
-//        this.count++;
+        count++;
     }
 
     public void meow()
     {
-        weight = weight - 1;
-        System.out.println("Meow");
+        if (catAlive)
+        {
+            weight = weight - 1;
+            System.out.println("Meow");
+            catNotAlive();
+        }
+
     }
 
     public void feed(Double amount)
     {
-       weight = weight + amount;
-       foodEaten += amount; //сокращенная форма записи foodEaten = foodEaten + amount. По умолчанию foodEaten = 0,
+        if (catAlive)
+        {
+            weight = weight + amount;
+            foodEaten += amount; //сокращенная форма записи foodEaten = foodEaten + amount. По умолчанию foodEaten = 0
+            catNotAlive();
+        }
     }
 
     public void drink(Double amount)
     {
-        weight = weight + amount;
+        if (catAlive)
+        {
+            weight = weight + amount;
+            catNotAlive();
+        }
     }
 
     public Double getWeight()
@@ -63,25 +74,26 @@ public class Cat
     }
     public void pee ()
     {
-        Double catWeightAfterToilet = getWeight() - (Math.pow(Math.random(),0.4));
-        System.out.println("Cat pee " + (getWeight() - catWeightAfterToilet));
-        weight = catWeightAfterToilet;
+        if(catAlive)
+        {
+            Double catWeightAfterToilet = getWeight() - (Math.pow(Math.random(), 0.4));
+            System.out.println("Cat pee " + (getWeight() - catWeightAfterToilet));
+            weight = catWeightAfterToilet;
+            catNotAlive();
+        }
     }
-//    public static int getCount()
-//    {
-//       return count;
-//    }
-//    public void catCount ()
-//    {
-//      if (!getStatus().equals("Dead"))
-//      {
-//          count--;
-//
-//      }
-//      if (!getStatus().equals("Dead"))
-//      {
-//          count--;
-//
-//      }
-//    }
+    public static int getCount()
+    {
+       return count;
+    }
+    private void catNotAlive ()
+    {
+        if (getStatus().equals("Exploded") || getStatus().equals("Dead"))
+        {
+            catAlive = false;
+            count --;
+            System.out.println("Cat dead " + count); //просто для понимания процесса расчета
+        }
+    }
+
 }
