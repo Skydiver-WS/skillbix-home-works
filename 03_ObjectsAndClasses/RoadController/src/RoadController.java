@@ -1,5 +1,5 @@
 import core.*;
-import core.Camera;
+
 
 import java.util.Scanner;
 
@@ -15,6 +15,7 @@ public class RoadController
 
     public static void main(String[] args)
     {
+        Car a = new Car();
         System.out.println("Сколько автомобилей сгенерировать?");
 
         Scanner scanner = new Scanner(System.in);
