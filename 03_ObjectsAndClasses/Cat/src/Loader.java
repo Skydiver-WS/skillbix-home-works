@@ -1,4 +1,3 @@
-
 public class Loader
 {
     public static void main(String[] args)
@@ -11,33 +10,23 @@ public class Loader
         Cat umka = new Cat();
         double ammountOfFood = 0;
 
-//        System.out.println("Vasya weight:" + "\t" + vasya.getWeight());
-//        System.out.println("Luka weight:" + "\t" + luka.getWeight());
-//        luka.feed(2.2);
-//        System.out.println("Luka ate" + "\t" + luka.getWeight());
-//        luka.drink(9.2);
-//        System.out.println("Luka ate" + "\t" + luka.getWeight());
-//        System.out.println("Timka weight:" + "\t" + timka.getWeight());
-//        System.out.println("Gulka weight:" + "\t" + gylka.getWeight());
-//        System.out.println("Umka weight:" + "\t" + umka.getWeight());
-//
-//        while (true)
-//        {
-//            luka.feed(ammountOfFood);
-//            ammountOfFood++;
-//            if (luka.getStatus().equals("Exploded")) {
-//               System.out.println("Luka weight after eating" + "\t" + luka.getWeight() + "\n Luka status:" + "\t" + luka.getStatus());
-//              break;
-//           }
-//        }
-//
-//       while (!timka.getStatus().equals("Dead"))
-//       {
-//           timka.meow();
-//       }
-//
-//       System.out.println("Timka status: " + timka.getStatus());
-//
+        while (true)
+        {
+            luka.feed(ammountOfFood);
+            ammountOfFood++;
+            if (luka.getStatus().equals("Exploded")) {
+               System.out.println("Luka weight after eating" + "\t" + luka.getWeight() + "\n Luka status:" + "\t" + luka.getStatus());
+              break;
+           }
+        }
+        System.out.println("Количество съеденной еды: " + luka.amountOfFoodEaten());
+
+       while (!timka.getStatus().equals("Dead"))
+       {
+           timka.meow();
+       }
+       System.out.println("Timka status: " + timka.getStatus());
+
 //       System.out.println("Timka eight: " + gylka.getWeight());
 //       gylka.feed(150.0);
 //       gylka.pee();
@@ -50,29 +39,25 @@ public class Loader
 //       System.out.println("Amount of food eaten: " + gylka.amountOfFoodEaten());
 //       System.out.println("Gulka weight: " + gylka.getWeight());
 //       gylka.pee();
-//       gylka.feed(100.0);
 //       gylka.pee();
 //       System.out.println("Gulka weight: " + gylka.getWeight());
-//
-//
-//
-//        luka.feed(3000.0);
-//        luka.feed(3000.0);
-//        luka.feed(3000.0);
-//        luka.feed(3000.0);
-//        luka.feed(30000.0);
-//        luka.feed(3000.0);
-//        luka.feed(3000.0);
-//        luka.feed(3000.0);
-//        luka.feed(3000.0);
-//        luka.feed(30000.0);
-//        luka.feed(3000.0);
-//
-//        System.out.println("Luka color " + CatColor.Red + "\n Luka weight after eating " + luka.getWeight() + "\n Luka status: " +  luka.getStatus());
-//
-//        vasya.feed(300.0);
-//
-//        System.out.println("Vasya weight after eating " + vasya.getWeight() + "\n Vasya status: " +  vasya.getStatus());
+
+        luka.feed(3000.0);
+        luka.feed(3000.0);
+        luka.feed(3000.0);
+        luka.feed(3000.0);
+        luka.feed(30000.0);
+        luka.feed(3000.0);
+        luka.feed(3000.0);
+        luka.feed(3000.0);
+        luka.feed(3000.0);
+        luka.feed(30000.0);
+        luka.feed(3000.0);
+        System.out.println("Количество съеденной еды: " + luka.amountOfFoodEaten());
+
+        System.out.println("Luka color " + luka.getCatColor() + "\n Luka weight after eating " + luka.getWeight() + "\n Luka status: " +  luka.getStatus());
+
+        System.out.println("Количество созданых котов: " + Cat.getCount());
 
 
         Cat a = new Cat("sdf",0.0);
@@ -81,7 +66,7 @@ public class Loader
         System.out.println("Cat name: " + b.name() + "\n" + "Cat weight: " + b.getWeight());
         Cat generate = getKitten();
         System.out.println("Cat name: " + generate.name() + "\n" + "Cat weight: " + generate.getWeight());
-//        System.out.println("Вывод значения с getCount: " + Cat.getCount());
+        System.out.println("Вывод значения с getCount: " + Cat.getCount());
 
         vasya.feed(10000.0);
         vasya.setCatColor(CatColor.Black);
@@ -94,5 +79,4 @@ public class Loader
     {
         return new Cat("0", 1100.0);
     }
-
 }
