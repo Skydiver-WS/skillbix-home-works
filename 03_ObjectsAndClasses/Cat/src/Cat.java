@@ -22,10 +22,11 @@ public class Cat
         count++;
     }
 
-    public Cat (String name, Double weight)
+    public Cat (String name, Double weight, CatColor color)
     {
         this();
         this.name = name;
+        this.color = color;
         if (name.equals("0"))
         {
             nameInput();
@@ -40,7 +41,10 @@ public class Cat
             weigthComparison();
         }
     }
-
+    public Cat (Cat clone) // копирование через конструктор
+    {
+       this(clone.name, clone.weight, clone.color);
+    }
     public void meow()
     {
         if (isCatAlive)
@@ -71,12 +75,20 @@ public class Cat
         }
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
     public Double getWeight()
     {
         return weight;
     }
 
-    public String name()
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName()
     {
         return name;
     }
@@ -119,7 +131,7 @@ public class Cat
        return count;
     }
 
-    private void isCatNotAlive ()
+    private void isCatNotAlive () // Вычитает умершего кота и задаёт переменной isCatAlive значение false
     {
         if (getStatus().equals("Exploded") || getStatus().equals("Dead"))
         {
@@ -134,14 +146,14 @@ public class Cat
         if (isCatAlive)
         {
             this.color = color;
+            System.out.println(name + " " + color);
         }
     }
     public CatColor getCatColor()
     {
         return color;
     }
-
-    private void nameInput()
+    public void nameInput()
     {
         System.out.println("Create a cat name. Cat number: " + count);
         Scanner scName = new Scanner(System.in);//ввод имени кота чере сканер.
@@ -150,7 +162,7 @@ public class Cat
                                  Преобразовать вышло, но в с if не получилось подружить. Может позже попробую */
     }
 
-    private void weigthInput()
+    public void weigthInput()
     {
         System.out.println("Create a cat weight. Cat number: " + count);
         Scanner scWeight = new Scanner(System.in);
