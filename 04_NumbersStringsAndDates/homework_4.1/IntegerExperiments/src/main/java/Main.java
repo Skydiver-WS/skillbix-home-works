@@ -5,7 +5,7 @@ public class Main {
     Container container = new Container();
     container.count += 7843;
 
-    int sum = sumDigits(12345);
+    int sum = sumDigits(7843);
 
     System.out.println(sum);
   }
@@ -22,22 +22,21 @@ public class Main {
 
   public static int sumDigits(Integer number) {
     //@TODO: write code here and delete TODO line
-      String text = String.valueOf(number); //преобразование переменной number в текст
-      int number2 = 0; // промежуточное значение
+      String convertToText = String.valueOf(number); //преобразование переменной number в текст
+      int intermediateNumber = 0; // промежуточное значение
       if (number != null)
       {
-          for (int i = 0; i < text.length(); i++) // перебор каждого символа в переменной text
+          for (int i = 0; i < convertToText.length(); i++) // перебор каждого символа в переменной text
           {
-              char test2 = text.charAt(i); // char преобразование текста в число начинается счёт с 0
-              int test3 = Integer.parseInt(String.valueOf(test2)); //для проведения расчетов необходимо char преобразовать в текст и обратно в Integer
-              number2 += test3;
+              char convertToNumber = convertToText.charAt(i); // char преобразование текста в число начинается счёт с 0
+              int convertToInteger = Integer.parseInt(String.valueOf(convertToNumber)); //для проведения расчетов необходимо char преобразовать в текст и обратно в Integer
+              intermediateNumber += convertToInteger;
           }
-          return number2;
+          return intermediateNumber;
       }
-      else if (number == null)
+      else
       {
        return -1;
       }
-    return 0;
   }
 }
