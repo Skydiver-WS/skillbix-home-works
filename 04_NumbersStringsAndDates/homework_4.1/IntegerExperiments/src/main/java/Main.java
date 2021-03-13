@@ -1,11 +1,11 @@
 public class Main {
-    public static int number;
+    private static int  intermediateNumber;
 
   public static void main(String[] args) {
     Container container = new Container();
     container.count += 7843;
 
-    int sum = sumDigits(7843);
+    int sum = sumDigits(111);
 
     System.out.println(sum);
   }
@@ -22,15 +22,12 @@ public class Main {
 
   public static int sumDigits(Integer number) {
     //@TODO: write code here and delete TODO line
-      String convertToText = String.valueOf(number); //преобразование переменной number в текст
-      int intermediateNumber = 0; // промежуточное значение
+      String convertToText = String.valueOf(number); //преобразование переменной number в тексn
       if (number != null)
       {
           for (int i = 0; i < convertToText.length(); i++) // перебор каждого символа в переменной text
           {
-              char convertToNumber = convertToText.charAt(i); // char преобразование текста в число начинается счёт с 0
-              int convertToInteger = Integer.parseInt(String.valueOf(convertToNumber)); //для проведения расчетов необходимо char преобразовать в текст и обратно в Integer
-              intermediateNumber += convertToInteger;
+              intermediateNumber += Character.getNumericValue(convertToText.charAt(i));
           }
           return intermediateNumber;
       }
