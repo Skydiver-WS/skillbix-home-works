@@ -9,9 +9,9 @@ public class Main {
         long g = Long.MAX_VALUE;
         long h = Long.MIN_VALUE;
         float i = Float.MAX_VALUE;
-        float j = Float.MIN_VALUE;
+        float j = -Float.MAX_VALUE;
         double k = Double.MAX_VALUE;
-        double l = Double.MIN_VALUE;
+        double l = -Double.MAX_VALUE;
         System.out.println("byte max: " + a + "\t" + "min: " + b + "\n" + "short max: " + c + "\t" + "min: " + d + "\n" +
                 "int max: " + e + "\t" + "min: " + f + "\n" + "long max: " + g + "\t" + "min: " + h + "\n" + "float max: " + i + "\t" + "min: " + j + "\n" +
                 "double max: " + k + "\t" + "min: " + l);
