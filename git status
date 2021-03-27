@@ -1,0 +1,152 @@
+[33mcommit 996ab2b2c6d2b808d018953853041116e274bec6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Mar 27 15:52:20 2021 +0300
+
+    Home work 4.3: Truks containers and boxes. One class, one method.
+
+[33mcommit 3cd90b8270f43ca6a2b837f600aff0ee41061d9f[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Thu Mar 25 22:58:10 2021 +0300
+
+    Home Work 4.3: TruksContainersAndBoxes
+
+[33mcommit de84d3d3607d022ae82134b87a3a003379a9040f[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Thu Mar 18 21:53:24 2021 +0300
+
+    Home work 4.3: Geometry Calculator
+
+[33mcommit 0d0f422eb07cbf11a1db143213eb57470b941058[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sun Mar 14 19:40:42 2021 +0300
+
+    Home work 4.2: Minimal and maximal values of the numbers
+
+[33mcommit 61baaaef7c2ab7864df46e22867580b6718d6585[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Mar 13 23:01:11 2021 +0300
+
+    Home work 4.2: Minimal and maximal values of numbers
+
+[33mcommit 104ff61cb5786befbf8cfac8b70efe615ccf7046[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Mar 13 22:07:43 2021 +0300
+
+    Home work 4.1: additional task
+
+[33mcommit 8c1f7706e59c952625e4d4f8b4245607ac0ef129[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Mar 13 00:08:59 2021 +0300
+
+    Home works 4.1: version 2
+
+[33mcommit 87b555b7b0f06fa37c54487a775aab8425e93627[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Tue Mar 9 22:01:51 2021 +0300
+
+    Home work 4.1: numbers strings and dates
+
+[33mcommit f7dd89d4c4f97021eab393385c033ad398f45342[m
+Author: Skillbox <it@skillbox.ru>
+Date:   Tue Mar 2 11:28:39 2021 +0000
+
+    Add lesson
+
+[33mcommit db1298e311be537013aa9ecbd099feb5d3f52859[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sun Feb 28 14:45:30 2021 +0300
+
+    Home work 3.8: Adding external libraries
+
+[33mcommit c2b3de3348f09eca7c1b778cf1e178db3aba390b[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Feb 27 19:12:49 2021 +0300
+
+    Home work 3.7: Copy objects
+
+[33mcommit 5cf9f509054f0288fca7e990d46293c155d4f1c1[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Thu Feb 25 21:54:05 2021 +0300
+
+    Home work 3.3: Corrected
+
+[33mcommit 6533f31092d042d0b9844ce05d1b5fe328f41cd9[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Mon Feb 22 18:28:06 2021 +0300
+
+    Home work 3.6: Getter adn setter
+
+[33mcommit 642c70f5ae05aef2766a0f82ea1e4f52f3b21049[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sun Feb 21 23:03:16 2021 +0300
+
+    Home work 3.5: Create obgects ano constructors
+
+[33mcommit 326c58c869b7d1729485b1e815573c899a1584de[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Feb 13 19:51:10 2021 +0300
+
+    Home work 3.4: constant variebles and enum
+
+[33mcommit 9a53b38065fa9d5f21ed58a75f21de5784713087[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Fri Feb 12 21:47:24 2021 +0300
+
+    Home work 3.3: Static method
+
+[33mcommit 9a139be5458c0c274e44328acfeb075b2d078d7a[m
+Merge: ee846eb 52580ad
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sun Feb 7 17:43:12 2021 +0300
+
+    Merge remote-tracking branch 'refs/remotes/origin/master'
+
+[33mcommit ee846ebd08ce6ae3289bb37b47a924cf88cab843[m
+Merge: 81e49e7 4ad3da7
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Fri Feb 5 21:19:22 2021 +0300
+
+    Home work 3.2: Method, parametrs and retrun
+
+[33mcommit 52580ad5ecd793ef58c0244c6dd7e5ba2f5df224[m
+Merge: 81e49e7 4ad3da7
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Fri Feb 5 21:19:22 2021 +0300
+
+    Home work 3.2: Method, parametrs and retrun
+
+[33mcommit 81e49e7f669f1166cedf35af06cf207e3b87ccf5[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Thu Feb 4 21:57:25 2021 +0300
+
+    Home work number 3.2: Method, parametrs and return. Attempt two
+
+[33mcommit bb481ed21ac220f77b1d639c1f79dd107db32a33[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sun Jan 31 21:17:05 2021 +0300
+
+    Home work number 3.2: Method, parametrs and return
+
+[33mcommit 4ad3da7725a75ad130fe9b5d4139de364ba28e51[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sun Jan 31 21:17:05 2021 +0300
+
+    Home work number 3.2: Method, parametrs and return
+
+[33mcommit 71e15983412d77ffb50911565917e598ce1a8caf[m
+Author: Aleksandr Isaev <isu172@mail.ru>
+Date:   Sat Jan 30 21:22:44 2021 +0300
+
+    Home work number 3.1: Class and object - cat experiments
+
+[33mcommit 23cd983f4be83b8d141c01cd8b07d03abe55614f[m
+Author: Skillbox <it@skillbox.ru>
+Date:   Sat Jan 23 17:31:53 2021 +0000
+
+    Add lesson
+
+[33mcommit ad49b628d8a95d7a22bb9c0f1656928937bc85e7[m
+Author: Skillbox <it@skillbox.ru>
+Date:   Thu Dec 24 10:34:13 2020 +0000
+
+    Add .gitignore
