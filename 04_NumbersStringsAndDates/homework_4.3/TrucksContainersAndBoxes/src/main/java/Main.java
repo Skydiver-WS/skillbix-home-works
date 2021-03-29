@@ -11,10 +11,9 @@ public class Main {
 		Scanner inputOfTheNumberOfBox = new Scanner(System.in);
 		int box = inputOfTheNumberOfBox.nextInt();
 		boxCount = Math.max(box, 0); //выбирает максимальное значение
-		int numberOfBoxesEntered = boxCount; // переменная для установления предела цикла, оно равно количеству введённых коробок
-		for (int i = 1; i <= numberOfBoxesEntered; i++)
+		for (int i = 0; i < boxCount; i++)
 		{
-			if ((boxCount % MAX_BOX) == 0 || i == 1)
+			if (i % MAX_BOX == 0)
 			{
 				if ((containersCount % MAX_CONTAINERS_IN_A_TRUCK) == 0)
 				{
@@ -24,8 +23,7 @@ public class Main {
 				containersCount += 1;
 				System.out.println("\t" + "Контейнер: " + containersCount);
 			}
-			boxCount = i;
-			System.out.println("\t\t" + "Ящик: " + boxCount);
+			System.out.println("\t\t" + "Ящик: " + (i+1));
 		}
 		System.out.println("Необходимо:" + "\n" + "грузовиков - " + trucksCount + " шт." + "\n" + "контейнеров - " + containersCount + " шт.");
 	}
