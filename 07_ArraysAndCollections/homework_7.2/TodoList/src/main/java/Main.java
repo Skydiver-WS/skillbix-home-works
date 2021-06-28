@@ -4,13 +4,13 @@ public class Main {
   private static final TodoList todoList = new TodoList();
   private static String inputText;
   private static int inputIndex;
-  private final static String INPUT_ITEMS = "Для добавления дела нажмите 1." +
-    "\nДля добавления дела по индексу нажмите 2." +
-    "\nДля замены дела нажмите 3." +
-    "\nДля удаления дела нажмите 4" +
-    "\nДля вывода списка всех дел нажмите 5" +
-    "\nДля вывода всех команд нажмите 9" +
-    "\nДля выхода из программы нажмите 0";
+  private final static String INPUT_ITEMS = "Для добавления дела введите ADD." +
+    "\nДля добавления дела по индексу введите ADD_INDEX." +
+    "\nДля замены дела введите EDIT" +
+    "\nДля удаления дела введите DELETE" +
+    "\nДля вывода списка всех дел введите LIST" +
+    "\nДля вывода всех команд введите HELP" +
+    "\nДля выхода из программы введите EXIT";
 
   public static void main(String[] args) {
     // TODO: написать консольное приложение для работы со списком дел todoList
@@ -19,15 +19,15 @@ public class Main {
     // метка, почитать про switch/case, неплохая замена if при необходимости выбора пунктов
     while (true) {
       System.out.println("Выберете пункт и нажмите Enter.");
-      setInputIndex();
-      switch (inputIndex) {
-        case 1: // Добавление дела
+      setInputText();
+      switch (inputText) {
+        case "ADD": // Добавление дела
           System.out.println("Введите дело:");
           setInputText();
           todoList.add(inputText);
           System.out.println("Добавлено дело " + inputText);
           break;
-        case 2: // Добавление дела по индексу
+        case "ADD_INDEX": // Добавление дела по индексу
           System.out.println("Введите индекс:");
           setInputIndex();
           System.out.println("Введите дело:");
@@ -35,7 +35,7 @@ public class Main {
           todoList.add(inputIndex, inputText);
           System.out.println("Добавлено дело " + inputText);
           break;
-        case 3: // Замена дела по индексу
+        case "EDIT": // Замена дела по индексу
           if (!todoList.getTodos().isEmpty()) {
             System.out.println("Выберете индекс дела для замены:");
             setInputIndex();
@@ -49,7 +49,7 @@ public class Main {
             System.out.println("Список дел пуст");
           }
           break;
-        case 4: // Удаление дела
+        case "DELETE": // Удаление дела
           if (!todoList.getTodos().isEmpty()) {
             System.out.println("Выберете индекс дела для удаления:");
             setInputIndex();
@@ -59,16 +59,16 @@ public class Main {
             System.out.println("Список дел пуст");
           }
           break;
-        case 5: // Вывод списка дел
+        case "LIST": // Вывод списка дел
           System.out.println((todoList.getTodos().isEmpty()) ? "Список дел пуст" : "");
           for (int i = 0; i < todoList.getTodos().size(); i++) {
             System.out.println(i + " - " + todoList.getTodos().get(i));
           }
           break;
-        case 9: // Вывод пунктов меню
+        case "HELP": // Вывод пунктов меню
           System.out.println(INPUT_ITEMS);
           break;
-        case 0: // выход из программы
+        case "EXIT": // выход из программы
           break label;
         default:
           System.out.println("Команда не распознана" + "\n");

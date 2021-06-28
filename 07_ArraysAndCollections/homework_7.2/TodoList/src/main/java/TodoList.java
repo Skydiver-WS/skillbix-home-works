@@ -11,7 +11,7 @@ public class TodoList {
 
   public void add(int index, String todo) {
     // TODO: добавьте дело на указаный индекс,
-    //  проверьте возможность добавления
+    //  проверьте возможность добавления.
     index = Math.min(index, todoList.size());
     todoList.add(index, todo);
   }
