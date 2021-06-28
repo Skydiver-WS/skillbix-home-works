@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class TodoList {
   private final ArrayList<String> todoList = new ArrayList<>();
+  private String listOfOldCases;
 
   public void add(String todo) {
     // TODO: добавьте переданное дело в конец списка
@@ -11,12 +12,8 @@ public class TodoList {
   public void add(int index, String todo) {
     // TODO: добавьте дело на указаный индекс,
     //  проверьте возможность добавления
-    if (index < 0) {
-      System.out.println("Нельзя вводить дело с отрицательным индексом");
-    } else {
-      index = Math.min(index, todoList.size());
-      todoList.add(index, todo);
-    }
+    index = Math.min(index, todoList.size());
+    todoList.add(index, todo);
   }
 
   public void edit(String todo, int index) {
@@ -25,6 +22,7 @@ public class TodoList {
     if (index >= todoList.size() || index < 0) {
       System.out.println("Дело с таким номером - " + index + " не существует");
     } else {
+      listOfOldCases = todoList.get(index);
       todoList.set(index, todo);
     }
   }
@@ -35,6 +33,7 @@ public class TodoList {
     if (index >= todoList.size() || index < 0) {
       System.out.println("Дело с номером - " + index + " не существует");
     } else {
+      listOfOldCases = todoList.get(index);
       todoList.remove(index);
     }
   }
@@ -44,4 +43,7 @@ public class TodoList {
     return todoList;
   }
 
+  public String getListOfOldCases() {
+    return listOfOldCases;
+  }
 }
