@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 public class PhoneBook {
 
   private final TreeMap<String, String> treeMapName = new TreeMap<>();
-  private final TreeSet<String> allContacts = new TreeSet<>();
   private final Pattern patternPhone = Pattern.compile("7\\d+");
   private final Pattern patternName = Pattern.compile("[A-Za-zА-Яа-яЁё]+");
 
@@ -39,21 +38,21 @@ public class PhoneBook {
   public Set<String> getPhonesByName(String name) {
     // формат одного контакта "Имя - Телефон"
     // если контакт не найден - вернуть пустой TreeSet
-    allContacts.clear();
+    TreeSet<String> contactSearch = new TreeSet<>();
     if (treeMapName.containsKey(name)) {
       for (String key : treeMapName.keySet()) {
         if (key.equals(name)) {
-          allContacts.add(key + " - " + treeMapName.get(key));
+          contactSearch.add(key + " - " + treeMapName.get(key));
         }
       }
     }
-    return allContacts;
+    return contactSearch;
   }
 
   public Set<String> getAllContacts() {
     // формат одного контакта "Имя - Телефон"
     // если контактов нет в телефонной книге - вернуть пустой TreeSet
-    allContacts.clear();
+    TreeSet<String> allContacts = new TreeSet<>();
     for (String key : treeMapName.keySet()) {
       allContacts.add(key + " - " + treeMapName.get(key));
     }
