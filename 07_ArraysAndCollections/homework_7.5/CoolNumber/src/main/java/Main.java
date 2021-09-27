@@ -1,16 +1,18 @@
 import java.util.*;
 
 public class Main {
-    /*
-    TODO:
-     - реализовать методы класса CoolNumbers
-     - посчитать время поиска введимого номера в консоль в каждой из структуры данных
-     - проанализоровать полученные данные
-     */
+  /*
+  TODO:
+   - реализовать методы класса CoolNumbers
+   - посчитать время поиска введимого номера в консоль в каждой из структуры данных
+   - проанализоровать полученные данные
+   */
+  private static final ArrayList<String> carNumberList = new ArrayList<>(CoolNumbers.generateCoolNumbers());
+  private static final TreeSet<String> treeSet = new TreeSet<>(carNumberList);
+  private static final HashSet<String> hashSet = new HashSet<>(carNumberList);
 
   public static void main(String[] args) {
-    ArrayList<String> carNumberList = new ArrayList<>(CoolNumbers.generateCoolNumbers());
-    System.out.println(carNumberList);
+   // System.out.println(carNumberList);
     for (int i = 0; i < 5; i++) {
       String inputSearchNumber = carNumberList.get(1 + (int) (Math.random() * (carNumberList.size() - 1)));
       var oneTestStart = System.nanoTime();
@@ -22,11 +24,11 @@ public class Main {
       var twoTestEnd = System.nanoTime();
       //============================================================================================================================================================
       var treeTestStart = System.nanoTime();
-      String testTree = CoolNumbers.searchInHashSet(new HashSet<>(carNumberList), inputSearchNumber) ? "Поиск в HashSet: номер найден, " : "Поиск в HashSet: номер не найден, ";
+      String testTree = CoolNumbers.searchInHashSet(hashSet, inputSearchNumber) ? "Поиск в HashSet: номер найден, " : "Поиск в HashSet: номер не найден, ";
       var treeTestEnd = System.nanoTime();
       //============================================================================================================================================================
       var fourTestStart = System.nanoTime();
-      String testFour = CoolNumbers.searchInTreeSet(new TreeSet<>(carNumberList), inputSearchNumber) ? "Поиск в TreeSet: номер найден, " : "Поиск в TreeSet: номер не найден, ";
+      String testFour = CoolNumbers.searchInTreeSet(treeSet, inputSearchNumber) ? "Поиск в TreeSet: номер найден, " : "Поиск в TreeSet: номер не найден, ";
       var fourTestEnd = System.nanoTime();
       //============================================================================================================================================================
       var resultTestOne = oneTestEnd - oneTestStart;
@@ -57,11 +59,11 @@ public class Main {
     var twoTestEnd = System.nanoTime();
     //============================================================================================================================================================
     var treeTestStart = System.nanoTime();
-    String testTree = CoolNumbers.searchInHashSet(new HashSet<>(carNumberList), inputSearchNumber) ? "Поиск в HashSet: номер найден, " : "Поиск в HashSet: номер не найден, ";
+    String testTree = CoolNumbers.searchInHashSet(hashSet, inputSearchNumber) ? "Поиск в HashSet: номер найден, " : "Поиск в HashSet: номер не найден, ";
     var treeTestEnd = System.nanoTime();
     //============================================================================================================================================================
     var fourTestStart = System.nanoTime();
-    String testFour = CoolNumbers.searchInTreeSet(new TreeSet<>(carNumberList), inputSearchNumber) ? "Поиск в TreeSet: номер найден, " : "Поиск в TreeSet: номер не найден, ";
+    String testFour = CoolNumbers.searchInTreeSet(treeSet, inputSearchNumber) ? "Поиск в TreeSet: номер найден, " : "Поиск в TreeSet: номер не найден, ";
     var fourTestEnd = System.nanoTime();
     //============================================================================================================================================================
     var resultTestOne = oneTestEnd - oneTestStart;
