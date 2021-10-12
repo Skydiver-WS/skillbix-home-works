@@ -1,6 +1,6 @@
 public class CardAccount extends BankAccount {
   // не забывайте, обращаться к методам и конструкторам родителя
-  // необходимо используя super, например, super.put(10D);
+  // необходимо используя super, например, super.put(10D)
   private final double PERCENT = 0.01;
 
   @Override
