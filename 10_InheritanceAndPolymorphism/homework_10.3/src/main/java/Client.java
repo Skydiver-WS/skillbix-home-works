@@ -1,16 +1,14 @@
+import java.util.HashMap;
+
 public abstract class Client {
+  protected double amount;
 
-    public double getAmount() {
-        //TODO: реализуйте метод и удалите todo
-        return 0;
-    }
+  public double getAmount() {
+    return amount;
+  }
 
-    public void put(double amountToPut) {
-        //TODO: реализуйте метод и удалите todo
-    }
+  abstract public void put(double amountToPut);
 
-    public void take(double amountToTake) {
-        //TODO: реализуйте метод и удалите todo
-    }
+  abstract public void take(double amountToTake);
 
 }
