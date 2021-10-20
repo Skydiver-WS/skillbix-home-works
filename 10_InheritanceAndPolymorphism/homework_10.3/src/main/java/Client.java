@@ -1,4 +1,3 @@
-
 public abstract class Client {
     protected double amount;
     protected double commission;
@@ -14,7 +13,6 @@ public abstract class Client {
     public double getCommission(){
         return commission;
     }
-
 
     abstract public void put(double amountToPut);
 
