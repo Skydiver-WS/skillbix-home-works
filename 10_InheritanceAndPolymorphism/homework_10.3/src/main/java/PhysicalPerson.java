@@ -14,16 +14,12 @@ public class PhysicalPerson extends Client {
     }
 
     @Override
-    public void setWithdrawalCommission(double amountCommission) {
-        commission = amountCommission;
+    public double getWithdrawalCommission(double amountCommission) {
+        return amountCommission;
     }
 
     @Override
-    public void setDepositCommission(double amountCommission) {
-        if (amountCommission >= COMMISSION_POINT) {
-            commission = amountCommission * PERCENT_PUT_MORE_1000;
-        } else {
-            commission = amountCommission * PERCENT_PUT_LESS_1000;
-        }
+    public double getDepositCommission(double amountCommission) {
+        return amountCommission;
     }
 }
