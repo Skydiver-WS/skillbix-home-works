@@ -21,6 +21,6 @@ public class IndividualBusinessman extends PhysicalPerson {
         } else {
             amountCommission = amountCommission * PERCENT_PUT_LESS_1000;
         }
-        return super.getWithdrawalCommission(amountCommission);
+        return amountCommission;
     }
 }

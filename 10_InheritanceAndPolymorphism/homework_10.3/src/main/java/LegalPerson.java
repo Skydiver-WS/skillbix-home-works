@@ -13,6 +13,6 @@ public class LegalPerson extends PhysicalPerson {
 
     @Override
     public double getWithdrawalCommission(double amountCommission) {
-        return super.getWithdrawalCommission(amountCommission * PERCENT_TAKE);
+        return amountCommission * PERCENT_TAKE;
     }
 }

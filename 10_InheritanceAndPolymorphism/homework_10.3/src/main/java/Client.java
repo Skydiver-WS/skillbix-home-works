@@ -13,4 +13,5 @@ public abstract class Client {
 
     abstract public double getWithdrawalCommission(double amountCommission);
 
+
 }

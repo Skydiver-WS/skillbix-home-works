@@ -22,4 +22,5 @@ public class PhysicalPerson extends Client {
     public double getDepositCommission(double amountCommission) {
         return amountCommission;
     }
+
 }
