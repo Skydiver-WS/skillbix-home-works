@@ -4,17 +4,6 @@ public class IndividualBusinessman extends PhysicalPerson {
     private final double COMMISSION_POINT = 1000;
 
     @Override
-    public void take(double amountToTake) {
-        super.take(amountToTake);
-    }
-
-    @Override
-    public void put(double amountToPut) {
-        double commission = getDepositCommission(amountToPut);
-        super.put(amountToPut - commission);
-    }
-
-    @Override
     public double getDepositCommission(double amountCommission) {
         if (amountCommission >= COMMISSION_POINT) {
             amountCommission = amountCommission * PERCENT_PUT_MORE_1000;
