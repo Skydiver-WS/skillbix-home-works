@@ -11,6 +11,5 @@ public class Main {
     legalPerson.take(50);
     individualBusinessman.take(50);
     System.out.println("Клиент " + client.getAmount() + "\n" + "Частное лицо " + legalPerson.getAmount() + "\n" + "ИП " + individualBusinessman.getAmount());
-    System.out.println("test " + legalPerson.getWithdrawalCommission(50));
   }
 }

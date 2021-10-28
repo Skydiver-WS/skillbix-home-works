@@ -14,12 +14,12 @@ public class PhysicalPerson extends Client {
     }
 
     @Override
-    public double getWithdrawalCommission(double amountCommission) {
+    protected double getWithdrawalCommission(double amountCommission) {
         return 0;
     }
 
     @Override
-    public double getDepositCommission(double amountCommission) {
+    protected double getDepositCommission(double amountCommission) {
         return 0;
     }
 

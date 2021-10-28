@@ -9,9 +9,9 @@ public abstract class Client {
 
     abstract public void take(double amountToTake);
 
-    abstract public double getDepositCommission(double amountCommission);
+    abstract protected double getDepositCommission(double amountCommission);
 
-    abstract public double getWithdrawalCommission(double amountCommission);
+    abstract protected double getWithdrawalCommission(double amountCommission);
 
 
 }
