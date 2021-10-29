@@ -9,7 +9,7 @@ public class Main {
     System.out.println("Клиент " + client.getAmount() + "\n" + "Частное лицо " + legalPerson.getAmount() + "\n" + "ИП " + individualBusinessman.getAmount() + "\n");
     client.take(50);
     legalPerson.take(50);
-    individualBusinessman.take(50);
+    individualBusinessman.take(51);
     System.out.println("Клиент " + client.getAmount() + "\n" + "Частное лицо " + legalPerson.getAmount() + "\n" + "ИП " + individualBusinessman.getAmount());
   }
 }
