@@ -1,9 +1,9 @@
 public abstract class Client {
-  protected double amount;
+    protected double amount;
 
-  public double getAmount() {
-    return amount;
-  }
+    public double getAmount() {
+        return amount;
+    }
 
   public void put(double amountToPut) {
     if (amountToPut > 0) {
@@ -17,8 +17,9 @@ public abstract class Client {
     }
   }
 
-  abstract protected double getDepositCommission(double amountCommission);
+    abstract protected double getDepositCommission(double amountCommission);
 
-  abstract protected double getWithdrawalCommission(double amountCommission);
+    abstract protected double getWithdrawalCommission(double amountCommission);
+
 
 }
