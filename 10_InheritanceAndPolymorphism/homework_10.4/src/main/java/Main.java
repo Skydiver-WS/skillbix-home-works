@@ -1,12 +1,12 @@
 public class Main {
   public static void main(String[] args) {
-    Employee manager = new Manager();
-    Employee topManager = new TopManager();
-    Employee operator = new Operator();
+    Manager manager = new Manager();
+    TopManager topManager = new TopManager();
+    Operator operator = new Operator();
     while (manager.getListEmployee().size() < 80 || topManager.getListEmployee().size() < 10 || operator.getListEmployee().size() < 180) {
-      double randomSalaryManager = 10000 + (Math.random() * (50000 - 10000));
-      double randomSalaryTopManager = 100000 + (Math.random() * (500000 - 100000));
-      double randomSalaryOperator = 10000 + (Math.random() * (30000 - 10000));
+      double randomSalaryManager = Double.parseDouble(String.format("%.2f", (10000 + (Math.random() * (50000 - 10000)))).replaceAll(",", "."));
+      double randomSalaryTopManager = Double.parseDouble(String.format("%.2f", (100000 + (Math.random() * (500000 - 100000)))).replaceAll(",", "."));
+      double randomSalaryOperator = Double.parseDouble(String.format("%.2f", (10000 + (Math.random() * (30000 - 10000)))).replaceAll(",", "."));
       if (manager.getListEmployee().size() < 80) {
         manager.hire("Manager", randomSalaryManager);
       }
@@ -19,8 +19,14 @@ public class Main {
     }
     topManager.hireAll(manager);
     topManager.hireAll(operator);
-    System.out.println(topManager.getListEmployee().keySet() + "\n" + topManager.getListEmployee().size());
+    System.out.println(topManager.getListEmployee().size());
     topManager.fire("120");
-    System.out.println(topManager.getListEmployee().keySet() + "\n" + topManager.getListEmployee().size());
+    System.out.println(topManager.getListEmployee() + " " + topManager.getListEmployee().size());
+    System.out.println(topManager.getMonthSalary("Operator id:96"));
+    System.out.println(monthSalary(topManager, "Top Manager"));
+
+  }
+  public static double monthSalary (Employee employee, String test){
+    return employee.getMonthSalary(test);
   }
 }

@@ -3,10 +3,11 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-abstract public class Company implements Employee {
+abstract public class Company {
   private int idNumber = 1;
   private static double income;
   private final HashMap<String, Double> listEmployee = new HashMap<>();
+
 
   public void hire(String positionCompany, double salary) {
     if (salary >= 0) {
@@ -18,12 +19,11 @@ abstract public class Company implements Employee {
     }
   }
 
-  public void hireAll(Employee employee) {
-    this.listEmployee.putAll(employee.getListEmployee());
-    employee.fire(String.valueOf(listEmployee.keySet().size()));
+  public void hireAll(Company employee) {
+    listEmployee.putAll(employee.getListEmployee());
   }
 
-  public void fire(String positionCompany) {
+  public void fire(String positionCompany){
     Pattern pattern = Pattern.compile("\\d+");
     Matcher matcher = pattern.matcher(positionCompany);
     if (matcher.matches() && listEmployee.size() >= Integer.parseInt(positionCompany) && Integer.parseInt(positionCompany) > 0) {
@@ -31,7 +31,6 @@ abstract public class Company implements Employee {
       for (int numberKey = 0; numberKey < Integer.parseInt(positionCompany); numberKey++) {
         listEmployee.remove(arrayList.get(numberKey));
       }
-      arrayList.clear();
     } else {
       listEmployee.remove(positionCompany);
     }
@@ -41,16 +40,13 @@ abstract public class Company implements Employee {
     return listEmployee;
   }
 
-  public double getMonthSalary(String positionNumberEmployee) {
-    return getListEmployee().get(positionNumberEmployee);
-  }
-
   public static double getIncome() {
     return income;
   }
 
-  public static void setIncome(double income) {
-    Company.income = income;
+  protected static void setIncome(double income) {
+    Company.income = income + getIncome();
   }
+
 
 }
