@@ -1,52 +1,42 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-abstract public class Company {
-  private int idNumber = 1;
-  private static double income;
-  private final HashMap<String, Double> listEmployee = new HashMap<>();
+public class Company {
+    protected static double income;
+    private double incomeCompany;
+    private final HashMap<Employee, Double> listEmployee = new HashMap<>();
 
-
-  public void hire(String positionCompany, double salary) {
-    if (salary >= 0) {
-      if (listEmployee.containsKey(positionCompany)) {
-        listEmployee.put(positionCompany + " id:" + idNumber++, salary);
-      } else {
-        listEmployee.put(positionCompany, salary);
-      }
+    public void hire(Employee employee) {
+        if (employee instanceof TopManager) {
+            income = incomeCompany;
+        }
+        if (employee instanceof Manager) {
+            incomeCompany += income;
+        }
+        listEmployee.put(employee, employee.getMonthSalary());
+        income = 0;
     }
-  }
 
-  public void hireAll(Company employee) {
-    listEmployee.putAll(employee.getListEmployee());
-  }
-
-  public void fire(String positionCompany){
-    Pattern pattern = Pattern.compile("\\d+");
-    Matcher matcher = pattern.matcher(positionCompany);
-    if (matcher.matches() && listEmployee.size() >= Integer.parseInt(positionCompany) && Integer.parseInt(positionCompany) > 0) {
-      ArrayList<String> arrayList = new ArrayList<>(listEmployee.keySet());
-      for (int numberKey = 0; numberKey < Integer.parseInt(positionCompany); numberKey++) {
-        listEmployee.remove(arrayList.get(numberKey));
-      }
-    } else {
-      listEmployee.remove(positionCompany);
+    public void hireAll(Company company){
+        listEmployee.putAll(company.getListEmployee());
+        company.fire(company.listEmployee.size());
     }
-  }
 
-  public HashMap<String, Double> getListEmployee() {
-    return listEmployee;
-  }
-
-  public static double getIncome() {
-    return income;
-  }
-
-  protected static void setIncome(double income) {
-    Company.income = income + getIncome();
-  }
+    public void fire(Integer positionCompany){
+        if (listEmployee.size() >= positionCompany) {
+            ArrayList<Employee> arrayList = new ArrayList<>(listEmployee.keySet());
+            for (int numberKey = 0; numberKey < positionCompany; numberKey++) {
+                listEmployee.remove(arrayList.get(numberKey));
+            }
+        }
+    }
 
 
+    public HashMap<Employee, Double> getListEmployee() {
+        return listEmployee;
+    }
+
+    public double getIncomeCompany() {
+        return incomeCompany;
+    }
 }

@@ -1,10 +1,13 @@
-public class Operator extends Company implements Employee{
+public class Operator implements Employee{
+
+  private double salary;
+
+  public Operator(Double salary) {
+    this.salary = salary;
+  }
+
   @Override
-  public double getMonthSalary(String positionNumberEmployee) {
-    if (getListEmployee().containsKey(positionNumberEmployee)){
-      return getListEmployee().get(positionNumberEmployee);
-    } else {
-      return  0;
-    }
+  public double getMonthSalary() {
+    return salary;
   }
 }
