@@ -8,6 +8,6 @@ public class Operator implements Employee{
 
   @Override
   public double getMonthSalary() {
-    return salary;
+    return Double.parseDouble(String.format("%.2f", salary).replaceAll(",", "."));
   }
 }

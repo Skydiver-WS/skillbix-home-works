@@ -3,16 +3,17 @@ public class TopManager implements Employee {
   private final double BONUS = 1.5;
   private double salary;
 
-  public TopManager(Double salary) {
-    this.salary = salary;
+
+  public TopManager(Company company, Double salary) {
+    if (company.getIncomeCompany() > INCOME) {
+      this.salary = salary * BONUS;
+    } else {
+      this.salary = salary;
+    }
   }
 
   @Override
   public double getMonthSalary() {
-    if (Company.income > INCOME){
-      return salary * BONUS;
-    }else {
-      return salary;
-    }
+    return Double.parseDouble(String.format("%.2f", salary).replaceAll(",", "."));
   }
 }

@@ -1,44 +1,48 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
         Company company = new Company();
+        Company company1 = new Company();
+        generateEmployee(company);
+        generateEmployee(company1);
+        company.hireAll(company1);
+        System.out.println("До увольнения " + company.getListEmployee().size());
+        listLowSalary(company, 15);
+        listTopSalary(company,10);
+        company.fire(154);
+        System.out.println("После увольнения " + company.getListEmployee().size());
+        listLowSalary(company, 15);
+        listTopSalary(company,10);
+        company.hireAll(company1);
+        System.out.println("Объединение " + company.getListEmployee().size());
+        listLowSalary(company, 15);
+        listTopSalary(company,10);
+    }
+
+    public static void generateEmployee(Company company){
         for (int operator = 0; operator < 180; operator++) {
-            double randomSalaryOperator = Double.parseDouble(String.format("%.2f", (10000 + (Math.random() * (30000 - 10000)))).replaceAll(",", "."));
+            double randomSalaryOperator = 10000 + (Math.random() * (30000 - 10000));
             company.hire(new Operator(randomSalaryOperator));
         }
         for (int manager = 0; manager < 80; manager++) {
-            double randomSalaryManager = Double.parseDouble(String.format("%.2f", (10000 + (Math.random() * (50000 - 10000)))).replaceAll(",", "."));
-            company.hire(new Manager(randomSalaryManager));
+            double randomSalaryManager = 10000 + (Math.random() * (50000 - 10000));
+            company.hire(new Manager(company, randomSalaryManager));
         }
         for (int topManager = 0; topManager < 10; topManager++) {
-            double randomSalaryTopManager = Double.parseDouble(String.format("%.2f", (100000 + (Math.random() * (500000 - 100000)))).replaceAll(",", "."));
-            company.hire(new TopManager(randomSalaryTopManager));
+            double randomSalaryTopManager = 100000 + (Math.random() * (500000 - 100000));
+            company.hire(new TopManager(company, randomSalaryTopManager));
         }
-        System.out.println(company.getListEmployee() + "\n" + company.getListEmployee().size() + "\n" + company.getIncomeCompany());
-        for (Employee e : company.getListEmployee().keySet()) {
-            System.out.println(e + " " + company.getListEmployee().get(e));
-        }
+    }
 
-        Company company2 = new Company();
-        for (int operator = 0; operator < 180; operator++) {
-            double randomSalaryOperator = Double.parseDouble(String.format("%.2f", (10000 + (Math.random() * (30000 - 10000)))).replaceAll(",", "."));
-            company2.hire(new Operator(randomSalaryOperator));
+    public static void listTopSalary(Company company, int listSalary){
+        for (int i = 0; i < company.getTopSalaryStaff(listSalary).size(); i++) {
+            System.out.println(company.getTopSalaryStaff(listSalary).get(i) + " " + company.getTopSalaryStaff(listSalary).get(i).getMonthSalary());
         }
-        for (int manager = 0; manager < 80; manager++) {
-            double randomSalaryManager = Double.parseDouble(String.format("%.2f", (10000 + (Math.random() * (50000 - 10000)))).replaceAll(",", "."));
-            company2.hire(new Manager(randomSalaryManager));
+        System.out.println("\n");
+    }
+    public static void listLowSalary(Company company, int listSalary){
+        for (int i = 0; i < company.getLowestSalaryStaff(listSalary).size(); i++) {
+            System.out.println(company.getLowestSalaryStaff(listSalary).get(i) + " " + company.getLowestSalaryStaff(listSalary).get(i).getMonthSalary());
         }
-        for (int topManager = 0; topManager < 10; topManager++) {
-            double randomSalaryTopManager = Double.parseDouble(String.format("%.2f", (100000 + (Math.random() * (500000 - 100000)))).replaceAll(",", "."));
-            company2.hire(new TopManager(randomSalaryTopManager));
-        }
-        System.out.println(company2.getListEmployee() + "\n" + company2.getListEmployee().size() + "\n" + company2.getIncomeCompany());
-        for (Employee e : company2.getListEmployee().keySet()) {
-            System.out.println(e + " " + company2.getListEmployee().get(e));
-        }
-        company.hireAll(company2);
-        System.out.println(company.getListEmployee().size());
-
+        System.out.println("\n");
     }
 }
